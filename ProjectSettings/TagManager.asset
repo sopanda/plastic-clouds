@@ -53,3 +53,6 @@ TagManager:
   - name: Hero
     uniqueID: 731225067
     locked: 0
+  - name: Skeleton
+    uniqueID: 3424583411
+    locked: 0
