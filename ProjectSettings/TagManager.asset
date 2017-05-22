@@ -50,3 +50,6 @@ TagManager:
   - name: Door
     uniqueID: 640587195
     locked: 0
+  - name: Hero
+    uniqueID: 731225067
+    locked: 0
