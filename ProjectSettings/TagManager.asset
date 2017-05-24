@@ -56,3 +56,30 @@ TagManager:
   - name: Skeleton
     uniqueID: 3424583411
     locked: 0
+  - name: Skeleton2
+    uniqueID: 4125623813
+    locked: 0
+  - name: Coin
+    uniqueID: 188580639
+    locked: 0
+  - name: Diamond
+    uniqueID: 751307773
+    locked: 0
+  - name: Box1
+    uniqueID: 2155827467
+    locked: 0
+  - name: Box2
+    uniqueID: 3764379499
+    locked: 0
+  - name: Box3
+    uniqueID: 3555485139
+    locked: 0
+  - name: BigBox
+    uniqueID: 2484520245
+    locked: 0
+  - name: Platform
+    uniqueID: 3263232153
+    locked: 0
+  - name: BigPlatform
+    uniqueID: 3632433937
+    locked: 0
