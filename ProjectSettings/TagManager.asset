@@ -83,3 +83,6 @@ TagManager:
   - name: BigPlatform
     uniqueID: 3632433937
     locked: 0
+  - name: Menu
+    uniqueID: 1474499953
+    locked: 0
