@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\HeroWalk.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\PlayerScore.cs" />
     <Compile Include="Assets\Scripts\Skeletons Scripts\Skeleton1\SkeletonWalk.cs" />
