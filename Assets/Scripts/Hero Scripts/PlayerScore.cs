@@ -24,5 +24,10 @@ public class PlayerScore : MonoBehaviour
             transform.position = new Vector3(0, 100000, 0);
         }
 
+        if (collision.tag == "Exit")
+        {
+            Time.timeScale = 0f;
+        }
+
     }
 }//class
