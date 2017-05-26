@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkeletonWalk : MonoBehaviour
 {
     private float speed = 3f;
-    private bool walkLeft;
+    public bool walkLeft;
 
 
 	void Start ()
