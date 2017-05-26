@@ -11,4 +11,18 @@ public class PlayerScore : MonoBehaviour
         isAlive = true;	
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Collectable")
+        {
+            collision.gameObject.SetActive(false); //uncheking and hidding
+        }
+
+        if (collision.tag == "Skeleton")
+        {
+            isAlive = false;
+            transform.position = new Vector3(0, 100000, 0);
+        }
+
+    }
 }//class
