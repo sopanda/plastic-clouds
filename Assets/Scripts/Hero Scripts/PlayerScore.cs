@@ -15,13 +15,19 @@ public class PlayerScore : MonoBehaviour
     {
         if(collision.tag == "Collectable")
         {
+            GameplayContoller.instance.IncrementScore();
             collision.gameObject.SetActive(false); //uncheking and hidding
         }
 
         if (collision.tag == "Skeleton")
         {
-            isAlive = false;
-            transform.position = new Vector3(0, 100000, 0);
+            if(isAlive)
+            {
+                isAlive = false;
+                GameplayContoller.instance.DecrementLife();
+                transform.position = new Vector3(0, 100000, 0);
+            }
+            
         }
 
         if (collision.tag == "Exit")
