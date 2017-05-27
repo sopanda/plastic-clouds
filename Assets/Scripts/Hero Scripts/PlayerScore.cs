@@ -6,12 +6,16 @@ public class PlayerScore : MonoBehaviour
 {
     public bool isAlive;
 
+    private GameObject gamefinished;
+
 	void Awake ()
     {
-        isAlive = true;	
+        isAlive = true;
+        gamefinished = GameObject.Find("LvlFinished");
+        gamefinished.gameObject.SetActive(false);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D (Collider2D collision)
     {
         if(collision.tag == "Collectable")
         {
@@ -27,12 +31,12 @@ public class PlayerScore : MonoBehaviour
                 GameplayContoller.instance.DecrementLife();
                 transform.position = new Vector3(0, 100000, 0);
             }
-            
         }
 
         if (collision.tag == "Exit")
         {
             Time.timeScale = 0f;
+            gamefinished.gameObject.SetActive(true);
         }
 
     }

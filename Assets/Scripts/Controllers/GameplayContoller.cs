@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayContoller : MonoBehaviour
 {
@@ -21,9 +22,37 @@ public class GameplayContoller : MonoBehaviour
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         lifeText = GameObject.Find("LifeText").GetComponent<Text>();
     }
-	
 
-	private void MakeInstance()
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += LevelFinishedLoading;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded += LevelFinishedLoading;
+    }
+
+    void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "Gameplay")
+        {
+            if(!GameManager.instance.HeroDiedAndRestart) //started for 1 time
+            {
+                score = 0;
+                lifeScore = 2;
+            }
+            else //restarted
+            {
+                score = GameManager.instance.score;
+                lifeScore = GameManager.instance.lifescore;
+            }
+            scoreText.text = "x " + score;
+            lifeText.text = "x " + lifeScore;
+        }
+    }
+
+    private void MakeInstance()
     {
         if(instance == null)
         {
@@ -33,7 +62,7 @@ public class GameplayContoller : MonoBehaviour
 
     public void IncrementScore()
     {
-        score += 1;
+        score++;
         scoreText.text = "x " + (score); 
     }
 
@@ -43,6 +72,25 @@ public class GameplayContoller : MonoBehaviour
         if(lifeScore >= 0)
         {
             lifeText.text = "x " + lifeScore;
+        }
+        StartCoroutine(HeroDied());
+    }
+
+    IEnumerator HeroDied()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if(lifeScore < 0)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            GameManager.instance.HeroDiedAndRestart = true;
+            GameManager.instance.score = score;
+            GameManager.instance.lifescore = lifeScore;
+            SceneManager.LoadScene("Gameplay");
+
         }
     }
 

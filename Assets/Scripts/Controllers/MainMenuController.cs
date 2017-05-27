@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
+        GameManager.instance.HeroDiedAndRestart = false;
         SceneManager.LoadScene("Gameplay");
     }
 	
