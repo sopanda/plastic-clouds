@@ -11,7 +11,7 @@ public class PlayerScore : MonoBehaviour
 	void Awake ()
     {
         isAlive = true;
-        gamefinished = GameObject.Find("LvlFinished");
+        gamefinished = GameObject.Find("LvlFinish");
         gamefinished.gameObject.SetActive(false);
 	}
 
