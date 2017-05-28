@@ -12,7 +12,7 @@ public class GameplayContoller : MonoBehaviour
     private Text lifeText;
 
 
-    private int score;
+    private double score;
     private int lifeScore;
 
 	void Awake ()
@@ -62,7 +62,7 @@ public class GameplayContoller : MonoBehaviour
 
     public void IncrementScore()
     {
-        score++;
+        score += 0.5;
         scoreText.text = "x " + (score); 
     }
 

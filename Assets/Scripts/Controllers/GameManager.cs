@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
-    public int score;       
+    public double score;       
     public int lifescore;
 
     public bool HeroDiedAndRestart;
