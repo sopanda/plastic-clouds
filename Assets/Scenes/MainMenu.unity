@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  livescore: 0
+  lifescore: 1
   HeroDiedAndRestart: 0
 --- !u!4 &81080276
 Transform:

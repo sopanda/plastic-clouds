@@ -17,13 +17,13 @@ public class PlayerScore : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D collision)
     {
-        if(collision.tag == "Collectable")
+        if (collision.tag == "Collectable")
         {
             GameplayContoller.instance.IncrementScore();
             collision.gameObject.SetActive(false); //uncheking and hidding
         }
 
-        if (collision.tag == "Skeleton")
+        if (collision.tag == "Skeleton" )
         {
             if(isAlive)
             {

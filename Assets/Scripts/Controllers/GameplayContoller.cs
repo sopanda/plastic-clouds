@@ -12,7 +12,7 @@ public class GameplayContoller : MonoBehaviour
     private Text lifeText;
 
 
-    private double score;
+    private double Score;
     private int lifeScore;
 
 	void Awake ()
@@ -39,15 +39,15 @@ public class GameplayContoller : MonoBehaviour
         {
             if(!GameManager.instance.HeroDiedAndRestart) //started for 1 time
             {
-                score = 0;
-                lifeScore = 2;
+                Score = 0;
+                lifeScore = 1;
             }
             else //restarted
             {
-                score = GameManager.instance.score;
+                Score = GameManager.instance.score;
                 lifeScore = GameManager.instance.lifescore;
             }
-            scoreText.text = "x " + score;
+            scoreText.text = "x " + Score;
             lifeText.text = "x " + lifeScore;
         }
     }
@@ -62,8 +62,8 @@ public class GameplayContoller : MonoBehaviour
 
     public void IncrementScore()
     {
-        score += 0.5;
-        scoreText.text = "x " + (score); 
+        Score += 0.5;
+        scoreText.text = "x " + (Score); 
     }
 
     public void DecrementLife()
@@ -87,7 +87,7 @@ public class GameplayContoller : MonoBehaviour
         else
         {
             GameManager.instance.HeroDiedAndRestart = true;
-            GameManager.instance.score = score;
+            GameManager.instance.score = Score;
             GameManager.instance.lifescore = lifeScore;
             SceneManager.LoadScene("Gameplay");
 
