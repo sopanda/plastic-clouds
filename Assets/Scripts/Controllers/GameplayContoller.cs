@@ -35,7 +35,7 @@ public class GameplayContoller : MonoBehaviour
 
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "Gameplay")
+		if(scene.name == "Gameplay" || scene.name == "Gameplay 1" || scene.name == "Gameplay 2")
         {
             if(!GameManager.instance.HeroDiedAndRestart) //started for 1 time
             {
@@ -90,7 +90,6 @@ public class GameplayContoller : MonoBehaviour
             GameManager.instance.score = Score;
             GameManager.instance.lifescore = lifeScore;
             SceneManager.LoadScene("Gameplay");
-
         }
     }
 

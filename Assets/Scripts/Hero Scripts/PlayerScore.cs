@@ -6,13 +6,16 @@ public class PlayerScore : MonoBehaviour
 {
     public bool isAlive;
 
-    private GameObject gamefinished;
+    private GameObject gamefinished, nextLevel;
 
 	void Awake ()
     {
         isAlive = true;
         gamefinished = GameObject.Find("LvlFinish");
         gamefinished.gameObject.SetActive(false);
+		nextLevel = GameObject.Find("NextLevel");
+		nextLevel.gameObject.SetActive(false);
+		Time.timeScale = 1f;
 	}
 
     void OnTriggerEnter2D (Collider2D collision)
@@ -33,11 +36,11 @@ public class PlayerScore : MonoBehaviour
             }
         }
 
-        if (collision.tag == "Exit")
+		if (collision.tag == "ExitLvl1" || collision.tag == "ExitLvl2" || collision.tag == "Exit")
         {
-            Time.timeScale = 0f;
             gamefinished.gameObject.SetActive(true);
+			Time.timeScale = 0f;
+			nextLevel.gameObject.SetActive(true);
         }
-
     }
 }//class

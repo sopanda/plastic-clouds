@@ -8,6 +8,8 @@ TagManager:
   - Collectable
   - Skeleton
   - Exit
+  - ExitLvl1
+  - ExitLvl2
   layers:
   - Default
   - TransparentFX
