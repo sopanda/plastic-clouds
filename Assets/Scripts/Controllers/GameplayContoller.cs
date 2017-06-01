@@ -30,7 +30,7 @@ public class GameplayContoller : MonoBehaviour
 
     void OnDisable()
     {
-        SceneManager.sceneLoaded += LevelFinishedLoading;
+        SceneManager.sceneLoaded -= LevelFinishedLoading;
     }
 
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -40,7 +40,7 @@ public class GameplayContoller : MonoBehaviour
             if(!GameManager.instance.HeroDiedAndRestart) //started for 1 time
             {
                 Score = 0;
-                lifeScore = 1;
+                lifeScore = 2;
             }
             else //restarted
             {

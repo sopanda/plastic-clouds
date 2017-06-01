@@ -22,8 +22,8 @@ public class PlayerScore : MonoBehaviour
     {
         if (collision.tag == "Collectable")
         {
-            GameplayContoller.instance.IncrementScore();
-            collision.gameObject.SetActive(false); //uncheking and hidding
+            	GameplayContoller.instance.IncrementScore();
+           		collision.gameObject.SetActive(false); //uncheking and hidding
         }
 
         if (collision.tag == "Skeleton" )
