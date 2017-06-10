@@ -15,7 +15,7 @@ public class GameplayContoller : MonoBehaviour
     private double Score;
     private int lifeScore;
 
-	void Awake ()
+    void Awake()
     {
         MakeInstance();
 
@@ -35,9 +35,9 @@ public class GameplayContoller : MonoBehaviour
 
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-		if(scene.name == "Gameplay" || scene.name == "Gameplay 1" || scene.name == "Gameplay 2")
+        if (scene.name == "Gameplay" || scene.name == "Gameplay 1" || scene.name == "Gameplay 2")
         {
-            if(!GameManager.instance.HeroDiedAndRestart) //started for 1 time
+            if (!GameManager.instance.HeroDiedAndRestart) //started for 1 time
             {
                 Score = 0;
                 lifeScore = 2;
@@ -54,7 +54,7 @@ public class GameplayContoller : MonoBehaviour
 
     private void MakeInstance()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -63,13 +63,13 @@ public class GameplayContoller : MonoBehaviour
     public void IncrementScore()
     {
         Score += 0.5;
-        scoreText.text = "x " + (Score); 
+        scoreText.text = "x " + (Score);
     }
 
     public void DecrementLife()
     {
         lifeScore--;
-        if(lifeScore >= 0)
+        if (lifeScore >= 0)
         {
             lifeText.text = "x " + lifeScore;
         }
@@ -80,7 +80,7 @@ public class GameplayContoller : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        if(lifeScore < 0)
+        if (lifeScore < 0)
         {
             SceneManager.LoadScene("MainMenu");
         }

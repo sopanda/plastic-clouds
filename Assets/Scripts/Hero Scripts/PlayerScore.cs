@@ -8,27 +8,27 @@ public class PlayerScore : MonoBehaviour
 
     private GameObject gamefinished, nextLevel;
 
-	void Awake ()
+    void Awake()
     {
         isAlive = true;
         gamefinished = GameObject.Find("LvlFinish");
         gamefinished.gameObject.SetActive(false);
-		nextLevel = GameObject.Find("NextLevel");
-		nextLevel.gameObject.SetActive(false);
-		Time.timeScale = 1f;
-	}
+        nextLevel = GameObject.Find("NextLevel");
+        nextLevel.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
-    void OnTriggerEnter2D (Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collectable")
         {
-            	GameplayContoller.instance.IncrementScore();
-           		collision.gameObject.SetActive(false); //uncheking and hidding
+            GameplayContoller.instance.IncrementScore();
+            collision.gameObject.SetActive(false); //uncheking and hidding
         }
 
-        if (collision.tag == "Skeleton" )
+        if (collision.tag == "Skeleton")
         {
-            if(isAlive)
+            if (isAlive)
             {
                 isAlive = false;
                 GameplayContoller.instance.DecrementLife();
@@ -36,11 +36,11 @@ public class PlayerScore : MonoBehaviour
             }
         }
 
-		if (collision.tag == "ExitLvl1" || collision.tag == "ExitLvl2" || collision.tag == "Exit")
+        if (collision.tag == "ExitLvl1" || collision.tag == "ExitLvl2" || collision.tag == "Exit")
         {
             gamefinished.gameObject.SetActive(true);
-			Time.timeScale = 0f;
-			nextLevel.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            nextLevel.gameObject.SetActive(true);
         }
     }
 }//class

@@ -11,23 +11,23 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-	public void LoadLevel2()
-	{
-		SceneManager.LoadScene("Gameplay 1");
-	}
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Gameplay 1");
+    }
 
-	public void LoadLevel3()
-	{
-		SceneManager.LoadScene("Gameplay 2");
-	}
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Gameplay 2");
+    }
 
-	public void BackToMenu()
-	{
-		SceneManager.LoadScene("MainMenu");
-	}
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
-	public void Quit()
-	{
-		Application.Quit();
-	}
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

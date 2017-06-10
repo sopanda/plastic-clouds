@@ -8,23 +8,23 @@ public class SkeletonWalk : MonoBehaviour
     public bool walkLeft;
 
 
-	void Start ()
+    void Start()
     {
         StartCoroutine(ChangeDirection());
     }
-	
-	
-	void Update ()
+
+
+    void Update()
     {
         Walk();
-	}
+    }
 
     private void Walk()
     {
         Vector3 tmp = transform.position;
         Vector3 tempScale = transform.localScale;
         //to the left
-        if(walkLeft)
+        if (walkLeft)
         {
             tmp.x -= speed * Time.deltaTime;//difference between frames
             tempScale.x = -Mathf.Abs(tempScale.x);

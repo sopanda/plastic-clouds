@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchMusic : MonoBehaviour 
+public class SwitchMusic : MonoBehaviour
 {
 
-	public AudioClip NewTrack;
+    public AudioClip NewTrack;
 
-	private AudioManager AM;
+    private AudioManager AM;
 
-	void Start () 
-	{
-		AM = FindObjectOfType<AudioManager> ();
+    void Start()
+    {
+        AM = FindObjectOfType<AudioManager>();
 
-		if(NewTrack != null)
-			AM.ChangeBGM (NewTrack);
-	}
+        if (NewTrack != null)
+            AM.ChangeBGM(NewTrack);
+    }
 }

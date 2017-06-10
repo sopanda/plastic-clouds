@@ -12,18 +12,18 @@ public class HeroWalk : MonoBehaviour
     private float jumpForce = 500f;
     private bool isGrounded = false;
 
-	void Awake ()
+    void Awake()
     {
-        myBody = GetComponent<Rigidbody2D> ();
+        myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-	}
-	
+    }
 
-	void FixedUpdate ()
+
+    void FixedUpdate()
     {
         HeroWalkKeyboard();
         Jump();
-	}
+    }
 
     private void HeroWalkKeyboard()
     {
@@ -35,20 +35,20 @@ public class HeroWalk : MonoBehaviour
         //h = 1, if pressed a or leftArrow
         //h = 0, nothing pressed
         //h = -1, if pressed d or rightArrow
-        if(h > 0)
+        if (h > 0)
         {
-            if(vel < maxVelocity)
+            if (vel < maxVelocity)
             {
                 forceX = speed;
             }
 
             Vector3 temp = transform.localScale; // took the local scale
-            temp.x = 9.160614f; 
+            temp.x = 9.160614f;
             transform.localScale = temp; //set new scale
 
             anim.SetBool("Walk", true);
         }
-        else if(h < 0)
+        else if (h < 0)
         {
             if (vel < maxVelocity)
             {
@@ -71,19 +71,19 @@ public class HeroWalk : MonoBehaviour
 
     private void Jump()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            if(isGrounded)
+            if (isGrounded)
             {
                 isGrounded = false;
                 myBody.AddForce(new Vector2(0, jumpForce));
-            } 
+            }
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Ground")
+        if (collision.tag == "Ground")
         {
             isGrounded = true;
         }

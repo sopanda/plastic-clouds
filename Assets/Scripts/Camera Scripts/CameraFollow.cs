@@ -9,26 +9,26 @@ public class CameraFollow : MonoBehaviour
 
     private float minX = 0f, maxX = 204f;
 
-	void Awake ()
+    void Awake()
     {
         hero = GameObject.Find("HERO");
         heroScore = hero.GetComponent<PlayerScore>();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
         FollowHero();
-	}
+    }
 
     private void FollowHero()
     {
-        if(heroScore.isAlive)
+        if (heroScore.isAlive)
         {
             Vector3 tmp = transform.position;
 
             tmp.x = hero.transform.position.x;
 
-            if(tmp.x < minX)
+            if (tmp.x < minX)
             {
                 tmp.x = minX;
             }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
-    public double score;       
+
+    public double score;
     public int lifescore;
 
     public bool HeroDiedAndRestart;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSingleton()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
