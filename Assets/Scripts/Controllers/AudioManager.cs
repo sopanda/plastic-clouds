@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Audio manager.
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public AudioSource BGM;
@@ -16,6 +19,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// zmiana utworu
+	/// </summary>
+	/// <param name="music">Music.</param>
     public void ChangeBGM(AudioClip music)
     {
         BGM.Stop();

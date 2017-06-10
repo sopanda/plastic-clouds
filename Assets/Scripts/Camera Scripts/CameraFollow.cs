@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Klasa dla kamery
+/// </summary>
 public class CameraFollow : MonoBehaviour
 {
     private GameObject hero;
@@ -20,6 +23,9 @@ public class CameraFollow : MonoBehaviour
         FollowHero();
     }
 
+	/// <summary>
+	/// kamera idzie za bohaterem
+	/// </summary>
     private void FollowHero()
     {
         if (heroScore.isAlive)

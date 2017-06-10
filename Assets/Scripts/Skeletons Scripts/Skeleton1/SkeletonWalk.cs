@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Klasa fizyki wrogów
+/// </summary>
 public class SkeletonWalk : MonoBehaviour
 {
     private float speed = 3f;
@@ -19,6 +22,9 @@ public class SkeletonWalk : MonoBehaviour
         Walk();
     }
 
+	/// <summary>
+	/// chodżba wrogów
+	/// </summary>
     private void Walk()
     {
         Vector3 tmp = transform.position;
@@ -38,7 +44,11 @@ public class SkeletonWalk : MonoBehaviour
         transform.position = tmp;
         transform.localScale = tempScale;
     }
-    //delete exsecution of task(wait 3 sec and exsecute a code
+
+    /// <summary>
+	/// czekam 3 sec i zmiana direction
+    /// </summary>
+    /// <returns>The direction.</returns>
     IEnumerator ChangeDirection()
     {
         yield return new WaitForSeconds(3f);

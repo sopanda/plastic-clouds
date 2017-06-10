@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Zmiana utworu
+/// </summary>
 public class SwitchMusic : MonoBehaviour
 {
 

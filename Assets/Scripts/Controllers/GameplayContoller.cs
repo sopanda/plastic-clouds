@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Gameplay contoller.
+/// </summary>
 public class GameplayContoller : MonoBehaviour
 {
     public static GameplayContoller instance;
@@ -22,17 +25,26 @@ public class GameplayContoller : MonoBehaviour
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         lifeText = GameObject.Find("LifeText").GetComponent<Text>();
     }
-
+	/// <summary>
+	/// Raises the enable event.
+	/// </summary>
     void OnEnable()
     {
         SceneManager.sceneLoaded += LevelFinishedLoading;
     }
-
+	/// <summary>
+	/// Raises the disable event.
+	/// </summary>
     void OnDisable()
     {
         SceneManager.sceneLoaded -= LevelFinishedLoading;
     }
 
+	/// <summary>
+	/// Levels finished loading.
+	/// </summary>
+	/// <param name="scene">Scene.</param>
+	/// <param name="mode">Mode.</param>
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "Gameplay" || scene.name == "Gameplay 1" || scene.name == "Gameplay 2")
@@ -60,12 +72,18 @@ public class GameplayContoller : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// Increments the score.
+	/// </summary>
     public void IncrementScore()
     {
         Score += 0.5;
         scoreText.text = "x " + (Score);
     }
 
+	/// <summary>
+	/// Decrements the life.
+	/// </summary>
     public void DecrementLife()
     {
         lifeScore--;
@@ -76,6 +94,10 @@ public class GameplayContoller : MonoBehaviour
         StartCoroutine(HeroDied());
     }
 
+	/// <summary>
+	/// zażądzanie życiem
+	/// </summary>
+	/// <returns>The died.</returns>
     IEnumerator HeroDied()
     {
         yield return new WaitForSeconds(2f);

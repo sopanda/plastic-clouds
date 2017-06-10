@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Klasa dla utworzenia fizyki, biegu i etc. bohatera
+/// </summary>
 public class HeroWalk : MonoBehaviour
 {
     private float speed = 30f, maxVelocity = 4f;
@@ -25,6 +28,9 @@ public class HeroWalk : MonoBehaviour
         Jump();
     }
 
+	/// <summary>
+	/// chodżba bohatera
+	/// </summary>
     private void HeroWalkKeyboard()
     {
         float forceX = 0f;
@@ -69,6 +75,9 @@ public class HeroWalk : MonoBehaviour
         myBody.AddForce(new Vector2(forceX, 0));
     }
 
+	/// <summary>
+	/// Skok bohatera
+	/// </summary>
     private void Jump()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -81,6 +90,10 @@ public class HeroWalk : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// fizyka ziemi
+	/// </summary>
+	/// <param name="collision">Collision.</param>
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ground")

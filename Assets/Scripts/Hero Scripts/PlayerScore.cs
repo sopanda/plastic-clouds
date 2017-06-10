@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Player score.
+/// </summary>
 public class PlayerScore : MonoBehaviour
 {
     public bool isAlive;
@@ -18,6 +21,10 @@ public class PlayerScore : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+	/// <summary>
+	/// zażądzanie życiem oraz kointami oraz przejcie pomiędzy poziomami
+	/// </summary>
+	/// <param name="collision">Collision.</param>
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collectable")

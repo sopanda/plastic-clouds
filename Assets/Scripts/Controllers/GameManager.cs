@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//keep score and if HERO is dead
+/// <summary>
+/// klasa ma 1 objekt całą gre i pomaga monitorować parametry
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
     }
 
+	/// <summary>
+	/// Przeschodzi przez wszystkie sceny
+	/// </summary>
     private void MakeSingleton()
     {
         if (instance != null)
