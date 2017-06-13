@@ -16,7 +16,7 @@ public class GameplayContoller : MonoBehaviour
 
 
     private double Score;
-    private int lifeScore;
+	private int lifeScore;
 
     void Awake()
     {
